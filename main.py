@@ -1,12 +1,17 @@
 import random
 
-password_symbols = "+-/*!&$#?=@abcdefghijklnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+def gen_pass(pass_length):
+    elements = "+-/*!&$#?=@<>"
+    password = ""
 
-ask_length_of_password = int(input('какой длинны хотите пароль(введите число) ?'))
+    for i in range(pass_length):
+        password += random.choice(elements)
 
-password = ""
+    return password
 
-for i in range(ask_length_of_password):
-    password += random.choice(password_symbols)
-
-print(password)
+def flip_coin():
+    flip = random.randint(0, 2)
+    if flip == 0:
+        return "Heads"
+    else:
+        return "Tails"
